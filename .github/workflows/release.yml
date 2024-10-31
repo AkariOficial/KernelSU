@@ -57,3 +57,4 @@ jobs:
             kernel-WSA*.zip
             kernel-ARCVM*.zip
             ksud-*
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
