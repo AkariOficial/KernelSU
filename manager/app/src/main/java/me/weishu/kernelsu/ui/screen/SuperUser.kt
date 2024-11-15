@@ -41,7 +41,6 @@ fun SuperUserScreen(navigator: DestinationsNavigator) {
     val viewModel = viewModel<SuperUserViewModel>()
     val scope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
-    val listState = rememberLazyListState()
 
     LaunchedEffect(key1 = navigator) {
         viewModel.search = ""
@@ -113,7 +112,6 @@ fun SuperUserScreen(navigator: DestinationsNavigator) {
             isRefreshing = viewModel.isRefreshing
         ) {
             LazyColumn(
-                state = listState,
                 modifier = Modifier
                     .fillMaxSize()
                     .nestedScroll(scrollBehavior.nestedScrollConnection)
